@@ -105,3 +105,9 @@ const replaceBlockchain = (blockchainCandidate: Block[]): void => {
     broadcastLatestBlockchain();
   }
 };
+
+const addBlockToChain = (block: Block): void => {
+  if (isBlockValid(block, getLastestBlock())) {
+    blockchain.push(block);
+  }
+};
